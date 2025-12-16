@@ -341,6 +341,21 @@ function initLightGallery() {
   }
 }
 
+function displayCurrentDate() {
+  const footerText = document.querySelector(".footer__text");
+  if (!footerText) return;
+
+  const dateElement = document.createElement("div");
+  dateElement.className = "footer__text-item";
+  
+  const today = new Date();
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = today.toLocaleDateString('en-US', options);
+  
+  dateElement.textContent = formattedDate;
+  footerText.appendChild(dateElement);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   createThemeToggle();
@@ -349,6 +364,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initFontSizeControl();
   initMenuHover();
   initLightGallery();
+  displayCurrentDate();
 });
 
 window.addEventListener("scroll", fixedNav);
