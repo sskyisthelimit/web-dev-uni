@@ -1,6 +1,3 @@
-// ============================================
-// BURGER MENU
-// ============================================
 function burgerMenu() {
   const burger = document.querySelector(".burger");
   const menu = document.querySelector(".menu");
@@ -29,9 +26,6 @@ function burgerMenu() {
   });
 }
 
-// ============================================
-// FIXED NAV
-// ============================================
 function fixedNav() {
   const nav = document.querySelector("nav");
   if (!nav) return;
@@ -43,9 +37,6 @@ function fixedNav() {
   }
 }
 
-// ============================================
-// DARK THEME
-// ============================================
 function initTheme() {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
@@ -83,9 +74,6 @@ function createThemeToggle() {
   document.body.appendChild(toggle);
 }
 
-// ============================================
-// FORM VALIDATION
-// ============================================
 function initFormValidation() {
   const contactForm = document.querySelector(".contact__form");
   const newsletterForm = document.querySelector(".newsletter-form");
@@ -150,7 +138,6 @@ function setupContactFormValidation(form) {
   const messageInput = form.querySelector("textarea");
   const submitBtn = form.querySelector("button");
 
-  // Real-time validation
   if (nameInput) {
     nameInput.addEventListener("blur", () => {
       if (!validateName(nameInput.value)) {
@@ -184,7 +171,6 @@ function setupContactFormValidation(form) {
     messageInput.addEventListener("input", () => clearValidation(messageInput));
   }
 
-  // Form submission
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -206,7 +192,6 @@ function setupContactFormValidation(form) {
     }
 
     if (isValid) {
-      // Show success message
       let successEl = form.querySelector(".form-success");
       if (!successEl) {
         successEl = document.createElement("div");
@@ -216,13 +201,11 @@ function setupContactFormValidation(form) {
       }
       successEl.classList.add("visible");
 
-      // Reset form
       form.reset();
       [nameInput, emailInput, messageInput].forEach((input) => {
         if (input) clearValidation(input);
       });
 
-      // Hide success message after 5 seconds
       setTimeout(() => {
         successEl.classList.remove("visible");
       }, 5000);
@@ -276,29 +259,23 @@ function setupNewsletterFormValidation(form) {
   });
 }
 
-// ============================================
-// FONT SIZE CONTROL (Arrow Up/Down)
-// ============================================
-let currentFontSize = 100; // percentage
+let currentFontSize = 100;
 const MIN_FONT_SIZE = 80;
 const MAX_FONT_SIZE = 150;
 const FONT_STEP = 5;
 
 function initFontSizeControl() {
-  // Create indicator
   const indicator = document.createElement("div");
   indicator.className = "font-size-indicator";
   indicator.textContent = "Font: 100%";
   document.body.appendChild(indicator);
 
-  // Load saved font size
   const savedSize = localStorage.getItem("fontSize");
   if (savedSize) {
     currentFontSize = parseInt(savedSize, 10);
     applyFontSize();
   }
 
-  // Listen for arrow keys
   document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowUp" && !e.target.matches("input, textarea")) {
       e.preventDefault();
@@ -335,9 +312,6 @@ function showFontSizeIndicator() {
   }
 }
 
-// ============================================
-// MENU HOVER (JS instead of CSS)
-// ============================================
 function initMenuHover() {
   const menuLinks = document.querySelectorAll(".menu__item-link");
 
@@ -360,9 +334,6 @@ function initMenuHover() {
   });
 }
 
-// ============================================
-// LIGHT GALLERY (if present)
-// ============================================
 function initLightGallery() {
   const galleryEl = document.getElementById("lightgallery");
   if (galleryEl && typeof lightGallery !== "undefined") {
@@ -370,9 +341,6 @@ function initLightGallery() {
   }
 }
 
-// ============================================
-// INITIALIZE ALL
-// ============================================
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   createThemeToggle();
