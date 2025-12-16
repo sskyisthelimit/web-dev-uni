@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peppy</title>
+    <title>Peppy - Contact</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.min.css">
+    <link rel="stylesheet" href="./css/theme.css">
 </head>
 
 <body class="main__body">
@@ -54,10 +55,10 @@
                     <h2 class="contact__title">Contact with me</h2>
                     <div class="contact__img"><img class="contact__img-item" src="./img/contact__img.jpg" alt="img"></div>
                     <form class="contact__form">
-                        <input class="contact__input" placeholder="Name" type="text">
-                        <textarea class="contact__textarea" name="contact" placeholder="Message"></textarea>
-                        <input class="contact__input" placeholder="Email" type="email">
-                        <button class="contact__btn modal__btn">Send</button>
+                        <input class="contact__input" placeholder="Name" type="text" name="name" required>
+                        <textarea class="contact__textarea" name="message" placeholder="Message" required></textarea>
+                        <input class="contact__input" placeholder="Email" type="email" name="email" required>
+                        <button class="contact__btn" type="submit">Send</button>
                     </form>
                     <div class="contact__info">
                         <h5 class="contact__info-title">My contacts</h5>
@@ -97,9 +98,7 @@
             </div>
         </div>
     </footer>
-
-    <script src="./js/scripts.min.js"></script>
+    <script src="./js/app.js"></script>
 </body>
-
 
 </html>

@@ -5,16 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peppy</title>
+    <title>Peppy - Gallery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css"
-        integrity="sha512-kwJUhJJaTDzGp6VTPBbMQWBFUof6+pv0SM3s8fo+E6XnPmVmtfwENK0vHYup3tsYnqHgRDoBDTJWoq7rnQw2+g=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer">
-        <link rel="stylesheet" href="./css/style.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css" integrity="sha512-kwJUhJJaTDzGp6VTPBbMQWBFUof6+pv0SM3s8fo+E6XnPmVmtfwENK0vHYup3tsYnqHgRDoBDTJWoq7rnQw2+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.min.css">
+    <link rel="stylesheet" href="./css/theme.css">
 </head>
 
 <body class="main__body">
@@ -54,7 +51,7 @@
     </header>
     <main class="main__gallery">
         <h2 class="gallery__title">Gallery</h2>
-        <div class="gallery">
+        <div class="gallery" id="lightgallery">
             <a href="./img/gallery1.jpg"><img src="./img/gallery1.jpg" alt="img"></a>
             <a href="./img/gallery7.jpg"><img src="./img/gallery7.jpg" alt="img"></a>
             <a href="./img/gallery2.jpg"><img src="./img/gallery2.jpg" alt="img"></a>
@@ -94,13 +91,8 @@
             </div>
         </div>
     </footer>
-    <script src="./js/scripts.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js" integrity="sha512-b4rL1m5b76KrUhDkj2Vf14Y0l1NtbiNXwV+SzOzLGv6Tz1roJHa70yr8RmTUswrauu2Wgb/xBJPR8v80pQYKtQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        lightGallery(document.querySelector('.gallery'));
-    </script>
+    <script src="./js/app.js"></script>
 </body>
-
-
 
 </html>

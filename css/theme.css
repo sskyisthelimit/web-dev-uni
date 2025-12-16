@@ -1,0 +1,213 @@
+/* Dark Theme Support */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #eae7dc;
+  --bg-nav: #c0c6b9;
+  --text-primary: #49676e;
+  --text-secondary: rgba(73, 103, 110, 0.8);
+  --accent-color: #450c28;
+  --border-color: #49676e;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --input-bg: #eae7dc;
+  --btn-hover: #262246;
+}
+
+body.dark-theme {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-nav: #0f3460;
+  --text-primary: #e8e8e8;
+  --text-secondary: rgba(232, 232, 232, 0.8);
+  --accent-color: #e94560;
+  --border-color: #e94560;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --input-bg: #16213e;
+  --btn-hover: #e94560;
+}
+
+/* Apply theme variables */
+body {
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav {
+  background-color: var(--bg-nav) !important;
+}
+
+footer {
+  background-color: var(--bg-nav) !important;
+}
+
+.menu__item-link,
+.home__title,
+.home__text-title,
+.home__text-content,
+.gallery__title,
+.me__title,
+.me-item__content-title,
+.contact__title,
+.contact__info,
+.contact__info-title,
+.contact__info-text,
+.shop__title,
+.shop__subtitle,
+.shop__item-name,
+.shop__item-price,
+.newsletter__title,
+.newsletter__subtitle,
+.footer__text-item {
+  color: var(--text-primary) !important;
+}
+
+.me-item__content-text,
+.me__text {
+  color: var(--text-secondary) !important;
+}
+
+.main__content-btn,
+.contact__input,
+.contact__textarea,
+.newsletter-form__input,
+.newsletter-form__textarea,
+.newsletter-form__btn {
+  background: var(--input-bg) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.contact__btn {
+  background-color: var(--border-color) !important;
+  color: var(--bg-secondary) !important;
+}
+
+.contact__btn:hover {
+  background-color: var(--btn-hover) !important;
+}
+
+.shop__subtitle-link {
+  color: var(--accent-color) !important;
+}
+
+.footer__link svg path {
+  fill: var(--text-primary);
+  transition: fill 0.3s ease;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bg-nav);
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggle svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--text-primary);
+  transition: fill 0.3s ease;
+}
+
+.theme-toggle .sun-icon {
+  display: none;
+}
+
+.theme-toggle .moon-icon {
+  display: block;
+}
+
+body.dark-theme .theme-toggle .sun-icon {
+  display: block;
+}
+
+body.dark-theme .theme-toggle .moon-icon {
+  display: none;
+}
+
+/* Font Size Controls */
+.font-size-indicator {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--bg-nav);
+  color: var(--text-primary);
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+  border: 1px solid var(--border-color);
+}
+
+.font-size-indicator.visible {
+  opacity: 1;
+}
+
+/* Form Validation Styles */
+.form-error {
+  color: #e94560;
+  font-size: 14px;
+  margin-top: 5px;
+  display: none;
+}
+
+.form-error.visible {
+  display: block;
+}
+
+.contact__input.invalid,
+.contact__textarea.invalid,
+.newsletter-form__input.invalid,
+.newsletter-form__textarea.invalid {
+  border: 2px solid #e94560 !important;
+}
+
+.contact__input.valid,
+.contact__textarea.valid,
+.newsletter-form__input.valid,
+.newsletter-form__textarea.valid {
+  border: 2px solid #4caf50 !important;
+}
+
+/* Success message */
+.form-success {
+  background: #4caf50;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 20px;
+  display: none;
+}
+
+.form-success.visible {
+  display: block;
+}
+
+/* Menu hover state for JS */
+.menu__item-link.hover-active {
+  color: var(--bg-secondary) !important;
+  border-bottom: 3px solid var(--bg-secondary);
+}
+
+body.dark-theme .menu__item-link.hover-active {
+  color: var(--accent-color) !important;
+  border-bottom: 3px solid var(--accent-color);
+}
